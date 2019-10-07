@@ -7,12 +7,12 @@ using System.Threading.Tasks;
 
 namespace OnlinePharmacy.Data.Services
 {
-    public interface ICategory
+    public interface IShoppingCart
     {
-        IEnumerable<tblCategories> GetAll();
-        tblCategories Get(int id);
-        void Add(tblCategories medicine);
-        void Update(tblCategories medicine);
+        IEnumerable<ShoppingCart> GetAll();
+        ShoppingCart Get(int id);
+        void Add(ShoppingCart medicine);
+        void Update(ShoppingCart medicine);
         void Delete(int id);
     }
 }

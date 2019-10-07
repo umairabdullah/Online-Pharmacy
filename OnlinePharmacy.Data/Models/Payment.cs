@@ -5,7 +5,7 @@ using System.Text;
 
 namespace OnlinePharmacy.Data.Models
 {
-    public class tblPayment
+    public class Payment
     {
         [Key]
         public int PaymentId { get; set; }

@@ -1,4 +1,4 @@
-﻿@model IEnumerable<OnlinePharmacy.Data.Models.tblCategories>
+﻿@model IEnumerable<OnlinePharmacy.Data.Models.Category>
 
 @{
     ViewBag.Title = "Categories";
@@ -17,6 +17,9 @@
         <th>
             @Html.DisplayNameFor(model => model.Description)
         </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DateCreated)
+        </th>
         <th></th>
     </tr>
 
@@ -29,9 +32,12 @@
             @Html.DisplayFor(modelItem => item.Description)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.CategoryId }) |
-            @Html.ActionLink("Details", "Details", new { id=item.CategoryId }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.CategoryId })
+            @Html.DisplayFor(modelItem => item.DateCreated)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id = item.CategoryId }) |
+            @Html.ActionLink("Details", "Details", new { id = item.CategoryId }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.CategoryId })
         </td>
     </tr>
 }

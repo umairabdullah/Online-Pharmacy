@@ -45,17 +45,29 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Models\tblCategory.cs" />
-    <Compile Include="Models\tblCompany.cs" />
-    <Compile Include="Models\tblInventory.cs" />
-    <Compile Include="Models\tblOrderMedicine.cs" />
-    <Compile Include="Models\tblPayment.cs" />
-    <Compile Include="Models\tblShoppingCart.cs" />
-    <Compile Include="Models\tblStock.cs" />
+    <Compile Include="Models\Category.cs" />
+    <Compile Include="Models\Company.cs" />
+    <Compile Include="Models\Inventory.cs" />
+    <Compile Include="Models\OrderMedicine.cs" />
+    <Compile Include="Models\Payment.cs" />
+    <Compile Include="Models\ShoppingCart.cs" />
+    <Compile Include="Models\Stock.cs" />
     <Compile Include="OnlinePharmacyContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\CategoryService.cs" />
-    <Compile Include="Services\ICategory.cs" />
+    <Compile Include="Services\CompanyService.cs" />
+    <Compile Include="Services\Interfaces\ICategory.cs" />
+    <Compile Include="Services\Interfaces\ICompany.cs" />
+    <Compile Include="Services\Interfaces\IInventory.cs" />
+    <Compile Include="Services\Interfaces\IOrderMedicine.cs" />
+    <Compile Include="Services\Interfaces\IPayment.cs" />
+    <Compile Include="Services\Interfaces\IShoppingCart.cs" />
+    <Compile Include="Services\Interfaces\IStock.cs" />
+    <Compile Include="Services\InventoryService.cs" />
+    <Compile Include="Services\OrderMedicineService.cs" />
+    <Compile Include="Services\PaymentService.cs" />
+    <Compile Include="Services\ShoppingCartService.cs" />
+    <Compile Include="Services\StockService.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

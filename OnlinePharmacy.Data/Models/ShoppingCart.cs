@@ -5,7 +5,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace OnlinePharmacy.Data.Models
 {
-    public class tblShoppingCart
+    public class ShoppingCart
     {
         [Key]
         public int CartId { get; set; }

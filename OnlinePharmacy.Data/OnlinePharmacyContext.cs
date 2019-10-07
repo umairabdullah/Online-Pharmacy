@@ -14,25 +14,25 @@ namespace OnlinePharmacy.Data
             //Database.SetInitializer(new DropCreateDatabaseIfModelChanges<Context>());
             Database.SetInitializer(new PharmacyDatabaseInitializer());
         }
-        public DbSet<tblCategories> Category { get; set; }
-        public DbSet<tblCompany> Company { get; set; }
-        public DbSet<tblInventory> Inventory { get; set; }
-        public DbSet<tblOrderMedicine> OrderMedicine { get; set; }
-        public DbSet<tblPayment> Payment { get; set; }
-        public DbSet<tblShoppingCart> ShoppingCart { get; set; }
-        public DbSet<tblStock> Stock { get; set; }
+        public DbSet<Category> Category { get; set; }
+        public DbSet<Company> Company { get; set; }
+        public DbSet<Inventory> Inventory { get; set; }
+        public DbSet<OrderMedicine> OrderMedicine { get; set; }
+        public DbSet<Payment> Payment { get; set; }
+        public DbSet<ShoppingCart> ShoppingCart { get; set; }
+        public DbSet<Stock> Stock { get; set; }
     }
 
     public class PharmacyDatabaseInitializer : DropCreateDatabaseAlways<OnlinePharmacyContext>
     {
         protected override void Seed(OnlinePharmacyContext context)
         {
-            new List<tblCategories>
+            new List<Category>
             {
-                new tblCategories{CategoryName = "Antibiotics", Description = "Antibiotics Medicines"},
-                new tblCategories{CategoryName = "Orthopaedics", Description = "Orthopaedics Medicines"},
-                new tblCategories{CategoryName = "Surgical", Description = "Surgical Medicines"},
-                new tblCategories{CategoryName = "Syrups", Description = "Syrups Medicines"}
+                new Category{CategoryName = "Antibiotics", Description = "Antibiotics Medicines", DateCreated = DateTime.Now},
+                new Category{CategoryName = "Orthopaedics", Description = "Orthopaedics Medicines", DateCreated = DateTime.Now},
+                new Category{CategoryName = "Surgical", Description = "Surgical Medicines", DateCreated = DateTime.Now},
+                new Category{CategoryName = "Syrups", Description = "Syrups Medicines", DateCreated = DateTime.Now}
             }.ForEach(c => context.Category.Add(c));
 
             base.Seed(context);

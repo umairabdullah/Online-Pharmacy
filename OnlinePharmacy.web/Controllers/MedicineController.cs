@@ -18,5 +18,11 @@ namespace OnlinePharmacy.web.Controllers
             var data = db.GetAll();
             return View(data);
         }
+
+        [HttpGet]
+        public ActionResult Create()
+        {
+            return PartialView("Create");
+        }
     }
 }

@@ -1,0 +1,16 @@
+﻿@model OnlinePharmacy.Data.Models.Medicine
+
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        <h3 class="panel-title">@Model.Name, @Model.Formula By @Model.MafBy, Dosage: @Model.Dosage</h3>
+    </div>
+    <div class="panel-body">
+        <p>
+            @Model.Description
+        </p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.MedicineId }) |
+        @Html.ActionLink("Details", "Details", new { id = Model.MedicineId }) |
+        @Html.ActionLink("Delete", "Delete", new { id = Model.MedicineId })
+    </div>
+</div>
+

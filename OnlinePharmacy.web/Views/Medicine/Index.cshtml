@@ -7,93 +7,35 @@
 <h2>Medicine List:</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    <button id="btnCreate" type="button" class="btn btn-primary" data-toggle="modal" data-target="myModal">Create</button>
+    <div class="modal" id="myModal" role="dialog" data-url="@Url.Action("Create", "Medicine")"></div>
 </p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Name)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Description)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.MafDate)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.BatchNo)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.ExpDate)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Price)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Quantity)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Dosage)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Formula)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.MafBy)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Status)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.CategoryId)
-        </th>
-        <th></th>
-    </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Name)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Description)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.MafDate)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.BatchNo)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.ExpDate)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Price)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Quantity)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Dosage)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Formula)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.MafBy)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Status)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.CategoryId)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.MedicineId }) |
-            @Html.ActionLink("Details", "Details", new { id=item.MedicineId }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.MedicineId })
-        </td>
-    </tr>
+<div class="flex-container">
+
+    @foreach (var item in Model)
+    {
+        <div class="flex-child">
+            @Html.Partial("_MedicineSummary", item)
+        </div>
+    }
+
+</div>
+
+@section scripts {
+
+    <script type="text/javascript">
+            $(document).ready(function () {
+                $('#btnCreate').click(function () {
+                    var url = $('#myModal').data('url');
+                    $.get(url, function (response) {
+                        $('#myModal').modal('show')
+                        $('#myModal').modal({ keyboard: false })
+                        $('#myModal').html(response)
+                    })
+                })
+            });
+
+    </script>
 }
 
-</table>

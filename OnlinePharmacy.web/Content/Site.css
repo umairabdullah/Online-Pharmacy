@@ -47,3 +47,24 @@ basic-horizontal-li {
     opacity: 0.5;
     cursor: pointer;
 }
+
+.flex-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.flex-child {
+    width: 300px;
+    height: 300px;
+    margin: 2px;
+}
+
+.modal {
+    position: fixed;
+    width: 720px;
+    height: 550px;
+    top: 50px;
+    left: 250px;
+    overflow: auto;
+}

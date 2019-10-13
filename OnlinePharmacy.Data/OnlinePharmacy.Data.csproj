@@ -48,6 +48,7 @@
     <Compile Include="Models\Category.cs" />
     <Compile Include="Models\Company.cs" />
     <Compile Include="Models\Inventory.cs" />
+    <Compile Include="Models\Medicine.cs" />
     <Compile Include="Models\OrderMedicine.cs" />
     <Compile Include="Models\Payment.cs" />
     <Compile Include="Models\ShoppingCart.cs" />
@@ -59,11 +60,13 @@
     <Compile Include="Services\Interfaces\ICategory.cs" />
     <Compile Include="Services\Interfaces\ICompany.cs" />
     <Compile Include="Services\Interfaces\IInventory.cs" />
+    <Compile Include="Services\Interfaces\IMedicine.cs" />
     <Compile Include="Services\Interfaces\IOrderMedicine.cs" />
     <Compile Include="Services\Interfaces\IPayment.cs" />
     <Compile Include="Services\Interfaces\IShoppingCart.cs" />
     <Compile Include="Services\Interfaces\IStock.cs" />
     <Compile Include="Services\InventoryService.cs" />
+    <Compile Include="Services\MedicineService.cs" />
     <Compile Include="Services\OrderMedicineService.cs" />
     <Compile Include="Services\PaymentService.cs" />
     <Compile Include="Services\ShoppingCartService.cs" />

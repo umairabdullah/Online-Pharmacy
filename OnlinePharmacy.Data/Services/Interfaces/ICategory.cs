@@ -11,8 +11,8 @@ namespace OnlinePharmacy.Data.Services
     {
         IEnumerable<Category> GetAll();
         Category Get(int id);
-        void Add(Category medicine);
-        void Update(Category medicine);
+        void Add(Category category);
+        void Update(Category category);
         void Delete(int id);
     }
 }
